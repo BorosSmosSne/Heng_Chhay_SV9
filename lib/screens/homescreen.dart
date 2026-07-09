@@ -44,22 +44,61 @@ class _HomescreenState extends State<Homescreen> {
                     ),
                     padding: const EdgeInsets.all(24),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         // Add your form fields here
-                        Text("Welcome Back!"),
+                        Text(
+                          "Welcome Back!",
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          "Email",
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 20),
                         TextField(
                           decoration: InputDecoration(
-                            labelText: 'Username',
-                            border: OutlineInputBorder(),
+                            labelText: 'Email',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                            ),
                           ),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          "Password",
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 20),
                         TextField(
                           decoration: InputDecoration(
                             labelText: 'Password',
-                            border: OutlineInputBorder(),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                            ),
                           ),
                           obscureText: true,
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Checkbox(
+                                value: true,
+                                onChanged: (value) {
+                                  // Handle checkbox change
+                                }),
+                            Text("Remember Me"),
+                            Spacer(),
+                            Text("Forgot Password?"),
+                          ],
                         ),
                       ],
                     ),
